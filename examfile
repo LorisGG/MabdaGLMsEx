@@ -22,4 +22,16 @@ anova(fm, fm1, fm2)
 From the anova test, by comparing the p values the first model(model) is the best model.
 The p values of other models are not significant
 
+op = par(mfrow = c(1, 3))
+plot(heart_weight ~ body_weight , data = cats,xlab="Body weight (Kg)",ylab="Heart weight (g)", col = sex)
+abline(reg=model,col="Black",lwd=2)
+
+plot(heart_weight ~ body_weight , data = cats,xlab="Body weight (Kg)",ylab="Heart weight (g)", col = sex)
+abline(reg=model2,col="Blue",lwd=2)
+
+plot(heart_weight ~ body_weight , data = cats,xlab="Body weight (Kg)",ylab="Heart weight (g)", col = sex)
+abline(reg=model3,col="Green",lwd=2)
+
+par(op)
+
 
