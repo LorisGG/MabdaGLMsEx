@@ -56,4 +56,5 @@ summary(gm)
 plot(ac$dose,ac$rate, xlab="Dose",ylab="Death rate",col= "red")
 
 
-
+gm2 = glm(SF ~ dose + I(dose^2), family = binomial, data=ac)
+summary(gm2)
