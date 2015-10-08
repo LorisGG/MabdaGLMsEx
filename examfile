@@ -48,3 +48,7 @@ ac$alive = 10 - ac$dec
 SF = rbind(ac$dec, alive = 10 - ac$dec)
 gm1 = glm(SF ~ dose, family = binomial, data=ac)
 summary(gm1)
+
+ac$dead <- ac$dec / 10
+acmodel <- glm(dead ~ dose, family = binomial, data = ac)
+summary(acmodel)
