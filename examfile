@@ -9,5 +9,6 @@ legend(x="topleft",legend=c("Male","Female"), pch=c(1,1),col=c("Red","Black"),bg
 abline(reg=lm(body_weight~heart_weight,data=cats[cats$sex =="-1",]),col="Black",lwd=2)
 abline(reg=lm(body_weight~heart_weight,data=cats[cats$sex =="1",]),col="Red",lwd=2)
 
+cats$sex <- factor(cats$sex, levels = c("-1","1"), labels = c("F","M")) 
 
 
