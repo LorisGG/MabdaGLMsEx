@@ -58,3 +58,10 @@ plot(ac$dose,ac$rate, xlab="Dose",ylab="Death rate",col= "red")
 
 gm2 = glm(SF ~ dose + I(dose^2), family = binomial, data=ac)
 summary(gm2)
+
+
+
+We use the linear model to find a linear relation among two or more variable. The focus is on the relationship between a dependent variable and one or more independent variables (or "predictors"). More specifically, it helps one understand how the typical value of the dependent variable changes when any one of the independent variables is varied, while the other independent variables are held fixed. For example, when we have two variables we might want to draw a smooth line that “best approximates” the causal relation between this two variables. 
+In particular, the assumption on a linear model is that the response variables have error distribuited like a normal distribution. This is the main difference with the GLM, that is necessary because the dependent variable of model is non-Normal. 
+The different distribution we seen during the lesson are: Binomial, Poisson, Gamma and Gaussian. The Gaussian case with the identity function is the same of linear model.
+
