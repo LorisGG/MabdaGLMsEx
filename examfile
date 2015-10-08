@@ -37,4 +37,7 @@ par(op)
 
 legend(x="topleft",legend=c("Male","Female"), pch=c(1,1),col=c("Red","Black"),bg="white",cex = 0.60)
 
+op = par(mfrow = c(2, 2))
+plot(fm)
+par(op)
 
