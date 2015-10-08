@@ -48,12 +48,10 @@ plot(dec ~ dose, data = ac,xlab="Dose",ylab="Deaths")
 From the graph we can see that if the dose increase the number of death increase too, 
 but the relation is not linear
 
-```{r, echo=TRUE, eval= TRUE}
-ac$alive = 10 - ac$dec
-SF <- data.frame(dead=ac$dec, alive = 10 - ac$dec)
-gm0 = glm(SF ~ dose, family = binomial, data=ac)
-```{r}
-summary(gm0)
+```{r, echo=TRUE, eval= TRUE, warning = FALSE}
+ac$alive = ac$tot-ac$dec
+gm = glm(alive ~ dose, family = binomial(), data=ac)
+summary(gm)
 ```
 
 
