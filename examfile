@@ -1,7 +1,13 @@
 ## welcome to the exam of Introduction to econometrics
-model <- lm(varible~....)
-i modified the exam file :D
-help me please #luca
 
 
-legend(x="topleft",legend=c("Female","Male"), pch=c(1,1),col=c("red","black"),bg="white")
+cats <- read.table("/home/lorisr/exam/data/cats.txt", header = TRUE, sep = "")
+cats$sex <- as.factor(cats$sex)
+plot(body_weight ~ heart_weight, data = cats, main="Plot of Body Weight Vs. Heart weight",
+     xlab="Body weight (Kg)",ylab="Heart weight (g)", col = sex)
+legend(x="topleft",legend=c("Male","Female"), pch=c(1,1),col=c("Red","Black"),bg="white")
+abline(reg=lm(body_weight~heart_weight,data=cats[cats$sex =="-1",]),col="Black",lwd=2)
+abline(reg=lm(body_weight~heart_weight,data=cats[cats$sex =="1",]),col="Red",lwd=2)
+
+
+
