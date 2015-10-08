@@ -35,20 +35,27 @@ abline(reg=model3,col="Green",lwd=2)
 par(op)
 
 
-
-
-
-legend(x="topleft",legend=c("Male","Female"), pch=c(1,1),col=c("Red","Black"),bg="white",cex = 0.60)
-
-op = par(mfrow = c(2, 2))
-plot(fm)
-par(op)
-
+```{r, echo=FALSE, message=FALSE}
+load("~/Desktop/esame/data/ac.rda")
 ac$alive = 10 - ac$dec
-SF = rbind(ac$dec, alive = 10 - ac$dec)
-gm1 = glm(SF ~ dose, family = binomial, data=ac)
-summary(gm1)
+ac$rate = ac$dec/ac$tot
+```
+```{r, echo=FALSE}
+plot(dec ~ dose, data = ac,xlab="Dose",ylab="Deaths")
+```
 
-ac$dead <- ac$dec / 10
-acmodel <- glm(dead ~ dose, family = binomial, data = ac)
-summary(acmodel)
+
+From the graph we can see that if the dose increase the number of death increase too, 
+but the relation is not linear
+
+```{r, echo=TRUE, eval= TRUE}
+ac$alive = 10 - ac$dec
+SF <- data.frame(dead=ac$dec, alive = 10 - ac$dec)
+gm0 = glm(SF ~ dose, family = binomial, data=ac)
+```{r}
+summary(gm0)
+```
+
+
+
+
