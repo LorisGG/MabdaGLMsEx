@@ -2,3 +2,6 @@
 model <- lm(varible~....)
 i modified the exam file :D
 help me please #luca
+
+
+legend(x="topleft",legend=c("Female","Male"), pch=c(1,1),col=c("red","black"),bg="white")
