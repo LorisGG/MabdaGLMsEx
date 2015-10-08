@@ -13,4 +13,7 @@ grid()
 fm <- lm(heart_weight~body_weight,data=cats)
 summary(fm)
 
+From the anova test, by comparing the p values the first model(model) is the best model.
+The p values of other models are not significant
+
 
