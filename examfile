@@ -10,4 +10,7 @@ abline(reg=lm(heart_weight ~ body_weight,data=cats[cats$sex =="F",]),col="Black"
 abline(reg=lm(heart_weight ~ body_weight,data=cats[cats$sex =="M",]),col="Red",lwd=2)
 grid()
 
+fm <- lm(heart_weight~body_weight,data=cats)
+summary(fm)
+
 
