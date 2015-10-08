@@ -35,3 +35,6 @@ abline(reg=model3,col="Green",lwd=2)
 par(op)
 
 
+legend(x="topleft",legend=c("Male","Female"), pch=c(1,1),col=c("Red","Black"),bg="white",cex = 0.60)
+
+
